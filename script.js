@@ -14,3 +14,7 @@ score1El.textContent = 0;
 // Add the hidden class to the dice
 diceEl.classList.add("hidden");
 
+// Rolling dice functionality
+btnRoll.addEventListener("click", function() {
+
+})
