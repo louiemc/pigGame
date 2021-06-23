@@ -15,6 +15,14 @@ score1El.textContent = 0;
 diceEl.classList.add("hidden");
 
 // Rolling dice functionality
-btnRoll.addEventListener("click", function() {
+btnRoll.addEventListener("click", function () {
+  // 1. Generate a random dice roll
+  const dice = Math.trunc(Math.random() * 6 + 1);
+  console.log(dice);
+  // this variable here will not be a global variable because each time we roll the dice we want to generate a new number
+  // 2. Display the dice
+  // remember the starting condition - we hid the dice by adding the hidden class, so we need to remove that
+  diceEl.classList.remove("hidden");
 
-})
+  // 3. Check for rolled 1: if true, switch to next player
+});
