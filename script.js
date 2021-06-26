@@ -24,4 +24,10 @@ btnRoll.addEventListener("click", function () {
   // remember the starting condition - we hid the dice by adding the hidden class, so we need to remove that
   diceEl.classList.remove("hidden");
   diceEl.src = `dice-${dice}.png`;
+
+  // 3. Check for rolled 1
+  if (dice !== 1) {
+  } else {
+    // switch to next player
+  }
 });
