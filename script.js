@@ -40,7 +40,12 @@ btnRoll.addEventListener("click", function () {
     // current0El.textContent = currentScore; // CHANGE LATER
     document.getElementById(`current--${activePlayer}`).textContent =
       currentScore;
-  } else {
-    // switch to next player
+  }
+  // switch to next player
+  // set previous player's current score to 0 first
+  else {
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    // change the active player status
+    activePlayer = activePlayer === 0 ? 1 : 0;
   }
 });
