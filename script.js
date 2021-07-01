@@ -11,6 +11,9 @@ const btnNew = document.querySelector(".btn--new");
 const btnRoll = document.querySelector(".btn--roll");
 const btnHold = document.querySelector(".btn--hold");
 
+const player0El = document.querySelector(".player--0");
+const player1El = document.querySelector(".player--1");
+
 // Set the initial conditions of score0El and score1El
 score0El.textContent = 0;
 score1El.textContent = 0;
