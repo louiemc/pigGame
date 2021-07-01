@@ -16,7 +16,10 @@ score0El.textContent = 0;
 score1El.textContent = 0;
 // Add the hidden class to the dice
 diceEl.classList.add("hidden");
+
 let currentScore = 0;
+let activePlayer = 0;
+const scores = [0, 0];
 
 // Rolling dice functionality
 btnRoll.addEventListener("click", function () {
