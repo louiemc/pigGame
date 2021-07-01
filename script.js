@@ -51,5 +51,8 @@ btnRoll.addEventListener("click", function () {
     // change the active player status
     activePlayer = activePlayer === 0 ? 1 : 0;
     currentScore = 0;
+    // use the active class for the current player
+    player0El.classList.toggle("player--active");
+    player1El.classList.toggle("player--active");
   }
 });
