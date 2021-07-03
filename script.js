@@ -22,6 +22,7 @@ diceEl.classList.add("hidden");
 
 let currentScore = 0;
 let activePlayer = 0;
+let playing = true;
 const scores = [0, 0];
 
 // Rolling dice functionality
@@ -66,4 +67,18 @@ btnHold.addEventListener("click", function () {
   // display the score
   document.getElementById(`score--${activePlayer}`).textContent =
     scores[activePlayer];
+
+  // check if the player's score is  >= 100, if so finish the game
+  if (scores[activePlayer] >= 100) {
+    // finish game
+    playing = false;
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.add("player--winner");
+    document
+      .querySelector(`.player--${activePlayer}`)
+      .classList.remove("player--active");
+  } else {
+    // switch players
+  }
 });
