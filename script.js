@@ -69,7 +69,7 @@ btnHold.addEventListener("click", function () {
     scores[activePlayer];
 
   // check if the player's score is  >= 100, if so finish the game
-  if (scores[activePlayer] >= 100) {
+  if (scores[activePlayer] >= 30) {
     // finish game
     playing = false;
     document
@@ -79,6 +79,13 @@ btnHold.addEventListener("click", function () {
       .querySelector(`.player--${activePlayer}`)
       .classList.remove("player--active");
   } else {
-    // switch players
+    // switch players - copied from the code above
+    document.getElementById(`current--${activePlayer}`).textContent = 0;
+    // change the active player status
+    activePlayer = activePlayer === 0 ? 1 : 0;
+    currentScore = 0;
+    // use the active class for the current player
+    player0El.classList.toggle("player--active");
+    player1El.classList.toggle("player--active");
   }
 });
