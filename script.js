@@ -88,6 +88,8 @@ btnHold.addEventListener("click", function () {
     if (scores[activePlayer] >= 30) {
       // finish game
       playing = false;
+      // remove the dice image after the player wins
+      diceEl.classList.add("hidden");
       document
         .querySelector(`.player--${activePlayer}`)
         .classList.add("player--winner");
