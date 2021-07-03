@@ -25,6 +25,17 @@ let activePlayer = 0;
 let playing = true;
 const scores = [0, 0];
 
+// Switch Player Function
+function switchPlayer() {
+  document.getElementById(`current--${activePlayer}`).textContent = 0;
+  // change the active player status
+  activePlayer = activePlayer === 0 ? 1 : 0;
+  currentScore = 0;
+  // use the active class for the current player
+  player0El.classList.toggle("player--active");
+  player1El.classList.toggle("player--active");
+}
+
 // Rolling dice functionality
 btnRoll.addEventListener("click", function () {
   // 1. Generate a random dice roll
@@ -48,13 +59,14 @@ btnRoll.addEventListener("click", function () {
   // switch to next player
   // set previous player's current score to 0 first
   else {
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    // change the active player status
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    currentScore = 0;
-    // use the active class for the current player
-    player0El.classList.toggle("player--active");
-    player1El.classList.toggle("player--active");
+    // document.getElementById(`current--${activePlayer}`).textContent = 0;
+    // // change the active player status
+    // activePlayer = activePlayer === 0 ? 1 : 0;
+    // currentScore = 0;
+    // // use the active class for the current player
+    // player0El.classList.toggle("player--active");
+    // player1El.classList.toggle("player--active");
+    switchPlayer();
   }
 });
 
@@ -79,13 +91,14 @@ btnHold.addEventListener("click", function () {
       .querySelector(`.player--${activePlayer}`)
       .classList.remove("player--active");
   } else {
-    // switch players - copied from the code above
-    document.getElementById(`current--${activePlayer}`).textContent = 0;
-    // change the active player status
-    activePlayer = activePlayer === 0 ? 1 : 0;
-    currentScore = 0;
-    // use the active class for the current player
-    player0El.classList.toggle("player--active");
-    player1El.classList.toggle("player--active");
+    // // switch players - copied from the code above
+    // document.getElementById(`current--${activePlayer}`).textContent = 0;
+    // // change the active player status
+    // activePlayer = activePlayer === 0 ? 1 : 0;
+    // currentScore = 0;
+    // // use the active class for the current player
+    // player0El.classList.toggle("player--active");
+    // player1El.classList.toggle("player--active");
+    switchPlayer();
   }
 });
