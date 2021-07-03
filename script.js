@@ -61,4 +61,9 @@ btnRoll.addEventListener("click", function () {
 btnHold.addEventListener("click", function () {
   // add current score to acitve player's score
   scores[activePlayer] += currentScore;
+  console.log(scores[activePlayer]);
+
+  // display the score
+  document.getElementById(`score--${activePlayer}`).textContent =
+    scores[activePlayer];
 });
