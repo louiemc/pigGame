@@ -146,7 +146,9 @@ btnHold.addEventListener("click", function () {
 });
 
 // Reset game functionality
-btnNew.addEventListener("click", function () {
+btnNew.addEventListener(
+  "click",
+  newGame
   // // remove the winner class
   // player0El.classList.remove("player--winner");
   // player1El.classList.remove("player--winner");
@@ -164,4 +166,4 @@ btnNew.addEventListener("click", function () {
   // // current score back to 0
   // // active player set back to first player
   // // setting playing back to true
-});
+);
