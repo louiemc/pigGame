@@ -113,7 +113,13 @@ btnHold.addEventListener("click", function () {
 // Reset game functionality
 btnNew.addEventListener("click", function () {
   // remove the winner class
-  document
-    .querySelector(`.player--${activePlayer}`)
-    .classList.remove("player--winner");
+  player0El.classList.remove("player--winner");
+  player1El.classList.remove("player--winner");
+
+  // set all scores back to 0
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  // sett all current scores back to 0
+  current0El.textContent = 0;
+  current1El.textContent = 0;
 });
