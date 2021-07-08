@@ -122,4 +122,8 @@ btnNew.addEventListener("click", function () {
   // sett all current scores back to 0
   current0El.textContent = 0;
   current1El.textContent = 0;
+
+  // remove the active class from both players (bc don't know who is the active player)
+  player0El.classList.remove("player--active");
+  player1El.classList.remove("player--active");
 });
