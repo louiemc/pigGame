@@ -14,16 +14,51 @@ const btnHold = document.querySelector(".btn--hold");
 const player0El = document.querySelector(".player--0");
 const player1El = document.querySelector(".player--1");
 
-// Set the initial conditions of score0El and score1El
-score0El.textContent = 0;
-score1El.textContent = 0;
-// Add the hidden class to the dice
-diceEl.classList.add("hidden");
+// // Set the initial conditions of score0El and score1El
+// score0El.textContent = 0;
+// score1El.textContent = 0;
+// // Add the hidden class to the dice
+// diceEl.classList.add("hidden");
 
-let currentScore = 0;
-let activePlayer = 0;
-let playing = true;
-const scores = [0, 0];
+// let currentScore = 0;
+// let activePlayer = 0;
+// let playing = true;
+// const scores = [0, 0];
+
+// Declaring variables outside the function
+let scores, currentScore, activePlayer, playing;
+// New Game Function
+function newGame() {
+  scores = [0, 0];
+  currentScore = 0;
+  activePlayer = 0;
+  playing = true;
+
+  // set all scores back to 0
+  score0El.textContent = 0;
+  score1El.textContent = 0;
+  // sett all current scores back to 0
+  current0El.textContent = 0;
+  current1El.textContent = 0;
+
+  // Add the hidden class to the dice
+  diceEl.classList.add("hidden");
+
+  // remove the winner class
+  player0El.classList.remove("player--winner");
+  player1El.classList.remove("player--winner");
+
+  // remove the active class from both players (bc don't know who is the active player)
+  player0El.classList.add("player--active");
+  player1El.classList.remove("player--active");
+
+  // now, set internal state variables back to initial state
+  // scores back to 0
+  // current score back to 0
+  // active player set back to first player
+  // setting playing back to true
+}
+newGame();
 
 // Switch Player Function
 function switchPlayer() {
@@ -112,18 +147,21 @@ btnHold.addEventListener("click", function () {
 
 // Reset game functionality
 btnNew.addEventListener("click", function () {
-  // remove the winner class
-  player0El.classList.remove("player--winner");
-  player1El.classList.remove("player--winner");
-
-  // set all scores back to 0
-  score0El.textContent = 0;
-  score1El.textContent = 0;
-  // sett all current scores back to 0
-  current0El.textContent = 0;
-  current1El.textContent = 0;
-
-  // remove the active class from both players (bc don't know who is the active player)
-  player0El.classList.add("player--active");
-  player1El.classList.remove("player--active");
+  // // remove the winner class
+  // player0El.classList.remove("player--winner");
+  // player1El.classList.remove("player--winner");
+  // // set all scores back to 0
+  // score0El.textContent = 0;
+  // score1El.textContent = 0;
+  // // sett all current scores back to 0
+  // current0El.textContent = 0;
+  // current1El.textContent = 0;
+  // // remove the active class from both players (bc don't know who is the active player)
+  // player0El.classList.add("player--active");
+  // player1El.classList.remove("player--active");
+  // // now, set internal state variables back to initial state
+  // // scores back to 0
+  // // current score back to 0
+  // // active player set back to first player
+  // // setting playing back to true
 });
