@@ -85,7 +85,7 @@ btnHold.addEventListener("click", function () {
       scores[activePlayer];
 
     // check if the player's score is  >= 100, if so finish the game
-    if (scores[activePlayer] >= 30) {
+    if (scores[activePlayer] >= 100) {
       // finish game
       playing = false;
       // remove the dice image after the player wins
@@ -108,4 +108,12 @@ btnHold.addEventListener("click", function () {
       switchPlayer();
     }
   }
+});
+
+// Reset game functionality
+btnNew.addEventListener("click", function () {
+  // remove the winner class
+  document
+    .querySelector(`.player--${activePlayer}`)
+    .classList.remove("player--winner");
 });
